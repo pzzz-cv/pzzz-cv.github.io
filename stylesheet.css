@@ -84,6 +84,21 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+/* Force sidebar links to always show as vertical list */
+.author__urls-wrapper {
+  display: block !important;
+}
+.author__urls-wrapper .author__urls {
+  display: block !important;
+  position: relative !important;
+  margin: 8px 0 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.author__urls-wrapper button { display: none !important; }
+
 /* Sidebar text links */
 .author__links {
   margin-top: 10px;
