@@ -84,6 +84,24 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+/* Sidebar text links */
+.author__links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.author__links a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.9em;
+  color: #494e52;
+  text-decoration: none;
+}
+.author__links a:hover { color: #0092ca; }
+.author__links a i { width: 16px; text-align: center; }
+
 /* SmartDirector demo component */
 .sd-demo { width: 100%; }
 .sd-kf-strip {
