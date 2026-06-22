@@ -1,0 +1,3 @@
+@font-face{font-family:'Academicons';src:url('https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/fonts/academicons.ttf') format('truetype'),url('https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/fonts/academicons.woff') format('woff');font-weight:normal;font-style:normal}
+.ai{display:inline-block;font:normal normal normal 14px/1 Academicons;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.ai-google-scholar:before{content:"\e828"}.ai-google-scholar-square:before{content:"\e829"}.ai-fw{width:1.28571429em;text-align:center}
