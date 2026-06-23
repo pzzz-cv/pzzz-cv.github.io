@@ -417,11 +417,11 @@
       <div style="text-align:center;color:#aaa;font-size:0.85em;margin-top:20px;padding-bottom:10px;">
         Visitors: <span id="visit-count">...</span>
       </div>
-      <!-- hidden img triggers count; JS reads the number from SVG -->
-      <img id="hits-img" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpzzz-cv.github.io&count_bg=%2379C83D&title_bg=%23555555&title=hits&edge_flat=false" style="display:none" alt="">
     </article>
 
   </div><!-- /#main -->
+<script data-goatcounter="https://zhanpeng.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 <script>
 function sdClick(img) {
   document.querySelectorAll('.sd-kf').forEach(function(el){ el.classList.remove('active'); });
@@ -429,16 +429,13 @@ function sdClick(img) {
   var video = document.getElementById('sd-video');
   if (video) { video.play(); }
 }
-// Parse visitor count from hits SVG
-fetch('https://hits.seeyoufarm.com/api/count/keep/badge.svg?url=https%3A%2F%2Fpzzz-cv.github.io')
-  .then(function(r){ return r.text(); })
-  .then(function(svg){
-    var m = svg.match(/<text[^>]*>\s*(\d[\d,]*)\s*<\/text>/g);
-    if (m && m.length) {
-      var last = m[m.length-1].replace(/<[^>]+>/g,'').trim();
-      var el = document.getElementById('visit-count');
-      if (el) el.textContent = last;
-    }
+// Fetch total pageviews from GoatCounter public API
+fetch('https://zhanpeng.goatcounter.com/api/v0/stats/total?start=2020-01-01&end=2099-12-31', {
+  headers: { 'Content-Type': 'application/json' }
+}).then(function(r){ return r.json(); })
+  .then(function(d){
+    var el = document.getElementById('visit-count');
+    if (el && d && d.total) el.textContent = d.total.toLocaleString();
   }).catch(function(){});
 </script>
 </body>
