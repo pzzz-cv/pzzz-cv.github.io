@@ -415,13 +415,12 @@
 
       </section>
       <div style="text-align:center;color:#aaa;font-size:0.85em;margin-top:20px;padding-bottom:10px;">
-        Visitors: <span id="visit-count">...</span>
+        Visitors: <span id="vercount-pv">...</span>
       </div>
     </article>
 
   </div><!-- /#main -->
-<script data-goatcounter="https://zhanpeng.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script defer src="https://cn.vercount.one/js"></script>
 <script>
 function sdClick(img) {
   document.querySelectorAll('.sd-kf').forEach(function(el){ el.classList.remove('active'); });
@@ -429,13 +428,6 @@ function sdClick(img) {
   var video = document.getElementById('sd-video');
   if (video) { video.play(); }
 }
-// Fetch total pageviews from GoatCounter public counter API
-fetch('https://zhanpeng.goatcounter.com/counter/%2F.json')
-  .then(function(r){ return r.json(); })
-  .then(function(d){
-    var el = document.getElementById('visit-count');
-    if (el && d && d.count) el.textContent = d.count;
-  }).catch(function(){});
 </script>
 </body>
 
